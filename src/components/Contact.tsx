@@ -7,6 +7,7 @@ import {
   Github,
   Linkedin,
   Loader2,
+  Mail,
   Paperclip,
   Send,
   Twitter,
@@ -16,6 +17,7 @@ import SectionFrame from "./SectionFrame";
 type SubmitStatus = "idle" | "sending" | "success" | "error";
 
 const CONTACT_FORM_NAME = "contact";
+const CONTACT_EMAIL = "lethanhvinh.dev@gmail.com";
 const MAX_FILE_SIZE = 7 * 1024 * 1024;
 const ALLOWED_FILE_TYPES = new Set([
   "application/pdf",
@@ -74,7 +76,7 @@ export default function Contact() {
     } catch {
       setStatus("error");
       setStatusMessage(
-        "Something went wrong. Please email me directly or try again later.",
+        `Something went wrong. Please email me directly at ${CONTACT_EMAIL}.`,
       );
     }
   };
@@ -107,15 +109,17 @@ export default function Contact() {
         >
           <form
             name={CONTACT_FORM_NAME}
+            action="/"
             method="POST"
             encType="multipart/form-data"
             data-netlify="true"
+            netlify-honeypot="bot-field"
             data-netlify-honeypot="bot-field"
             className="grid grid-cols-1 gap-6"
             onSubmit={handleSubmit}
           >
             <input type="hidden" name="form-name" value={CONTACT_FORM_NAME} />
-            <p className="hidden">
+            <p className="sr-only">
               <label>
                 Do not fill this out if you are human:
                 <input name="bot-field" tabIndex={-1} />
@@ -150,7 +154,7 @@ export default function Contact() {
                   id="contact-email"
                   name="email"
                   type="email"
-                  placeholder="lethanhvinh.dev@gmail.com"
+                  placeholder={CONTACT_EMAIL}
                   autoComplete="email"
                   required
                   className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-indigo-500 transition-colors"
@@ -232,6 +236,7 @@ export default function Contact() {
               </div>
             )}
             <button
+              type="submit"
               disabled={status === "sending"}
               className="group relative w-full py-5 rounded-2xl bg-gradient-to-r from-indigo-600 to-purple-600 font-bold uppercase tracking-widest overflow-hidden transition-transform active:scale-95 disabled:cursor-not-allowed disabled:opacity-70"
             >
@@ -246,6 +251,13 @@ export default function Contact() {
               <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500" />
             </button>
           </form>
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="mt-6 inline-flex items-center justify-center gap-2 text-sm font-medium text-white/60 transition-colors hover:text-indigo-300"
+          >
+            <Mail size={16} />
+            {CONTACT_EMAIL}
+          </a>
         </motion.div>
 
         {/* Social Icons */}
