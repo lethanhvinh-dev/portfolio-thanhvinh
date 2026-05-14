@@ -7,8 +7,8 @@ const projects = [
     id: 1,
     title: "Luxury Dashboard",
     category: "Fintech",
-    src: "https://picsum.photos/seed/proj1/800/1000",
-    href: "#",
+    src: "/thuvienso.png",
+    href: "https://thuviensovietnam.netlify.app/",
   },
   {
     id: 2,
@@ -48,7 +48,11 @@ export default function Projects() {
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.45, delay: i * 0.04, ease: [0.16, 1, 0.3, 1] }}
+            transition={{
+              duration: 0.45,
+              delay: i * 0.04,
+              ease: [0.16, 1, 0.3, 1],
+            }}
           >
             <a
               href={project.href}

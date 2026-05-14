@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X } from 'lucide-react';
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,26 +10,28 @@ export default function Navbar() {
     const handleScroll = () => {
       const nextScrolled = window.scrollY > 50;
       setScrolled((current) =>
-        current === nextScrolled ? current : nextScrolled
+        current === nextScrolled ? current : nextScrolled,
       );
     };
 
     handleScroll();
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about" },
+    { name: "Projects", href: "#projects" },
+    { name: "Contact", href: "#contact" },
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-500 ${
-        scrolled ? 'py-4 bg-black/50 backdrop-blur-xl border-b border-white/10' : 'py-8 bg-transparent'
+        scrolled
+          ? "py-4 bg-black/50 backdrop-blur-xl border-b border-white/10"
+          : "py-8 bg-transparent"
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
@@ -71,10 +73,10 @@ export default function Navbar() {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{ opacity: 0, x: '100%' }}
+              initial={{ opacity: 0, x: "100%" }}
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: '100%' }}
-              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              exit={{ opacity: 0, x: "100%" }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
               className="fixed inset-0 bg-black z-[1000] flex flex-col items-center justify-center gap-8"
             >
               {navLinks.map((link) => (

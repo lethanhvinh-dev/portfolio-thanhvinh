@@ -25,6 +25,24 @@ const ALLOWED_FILE_TYPES = new Set([
   "image/png",
 ]);
 
+const encodeFormData = (formData: FormData) => {
+  const params = new URLSearchParams();
+
+  formData.forEach((value, key) => {
+    if (value instanceof File) {
+      if (value.size > 0) {
+        params.append(key, value.name);
+      }
+
+      return;
+    }
+
+    params.append(key, value);
+  });
+
+  return params.toString();
+};
+
 export default function Contact() {
   const [status, setStatus] = useState<SubmitStatus>("idle");
   const [statusMessage, setStatusMessage] = useState("");
@@ -41,8 +59,9 @@ export default function Contact() {
     const form = event.currentTarget;
     const formData = new FormData(form);
     const attachment = formData.get("attachment");
+    const hasAttachment = attachment instanceof File && attachment.size > 0;
 
-    if (attachment instanceof File && attachment.size > 0) {
+    if (hasAttachment) {
       if (attachment.size > MAX_FILE_SIZE) {
         setStatus("error");
         setStatusMessage("Please upload a file smaller than 7MB.");
@@ -62,7 +81,12 @@ export default function Contact() {
     try {
       const response = await fetch("/", {
         method: "POST",
-        body: formData,
+        ...(hasAttachment
+          ? { body: formData }
+          : {
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+              body: encodeFormData(formData),
+            }),
       });
 
       if (!response.ok) {
