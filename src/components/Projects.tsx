@@ -6,7 +6,7 @@ const projects = [
   {
     id: 1,
     title: "Thuviensovietnam",
-    category: "Web App",
+    category: "Web",
     description:
       "A digital library platform for Vietnamese readers — browse, search and read thousands of books online.",
     src: "/thuvienso.png",
@@ -17,7 +17,7 @@ const projects = [
   {
     id: 2,
     title: "InkZinh",
-    category: "Web App",
+    category: "Web",
     description:
       "A creative tattoo studio platform showcasing artists, portfolios, and booking flows with stunning visuals.",
     src: "/inkzinh.png",
