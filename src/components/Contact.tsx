@@ -295,8 +295,8 @@ export default function Contact() {
               Icon: Github,
               href: "https://github.com/lethanhvinh-dev?tab=repositories",
             },
-            { Icon: Twitter, href: "#" },
-            { Icon: Linkedin, href: "#" },
+            // { Icon: Twitter, href: "#" },
+            // { Icon: Linkedin, href: "#" },
           ].map((social, i) => (
             <motion.a
               key={i}

@@ -1,7 +1,7 @@
 import { useRef, type ReactNode } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 
-type SectionTone = "indigo" | "violet" | "cyan";
+type SectionTone = "indigo" | "violet" | "cyan" | "emerald";
 
 type SectionFrameProps = {
   id: string;
