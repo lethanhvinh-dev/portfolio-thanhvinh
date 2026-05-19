@@ -9,8 +9,8 @@ const ROLES = [
 ];
 
 const STATS = [
-  { value: "5+", label: "Projects Built" },
-  { value: "2+", label: "Years Experience" },
+  { value: "2+", label: "Projects Built" },
+  { value: "1", label: "Years Experience" },
   { value: "10+", label: "Tech Mastered" },
 ];
 
@@ -56,7 +56,8 @@ export default function Hero() {
         style={{
           width: "600px",
           height: "600px",
-          background: "radial-gradient(circle, rgba(99,102,241,0.3) 0%, transparent 70%)",
+          background:
+            "radial-gradient(circle, rgba(99,102,241,0.3) 0%, transparent 70%)",
           top: "10%",
           left: "-10%",
         }}
@@ -66,7 +67,8 @@ export default function Hero() {
         style={{
           width: "400px",
           height: "400px",
-          background: "radial-gradient(circle, rgba(168,85,247,0.25) 0%, transparent 70%)",
+          background:
+            "radial-gradient(circle, rgba(168,85,247,0.25) 0%, transparent 70%)",
           bottom: "15%",
           right: "-5%",
         }}
@@ -94,9 +96,11 @@ export default function Hero() {
           className="relative w-36 h-36 md:w-44 md:h-44 mx-auto mb-8"
         >
           {/* Rotating gradient ring */}
-          <div className="absolute inset-[-3px] rounded-full animate-spin-slow"
+          <div
+            className="absolute inset-[-3px] rounded-full animate-spin-slow"
             style={{
-              background: "conic-gradient(from 0deg, #6366f1, #a855f7, #ec4899, #6366f1)",
+              background:
+                "conic-gradient(from 0deg, #6366f1, #a855f7, #ec4899, #6366f1)",
               borderRadius: "9999px",
             }}
           />
@@ -133,7 +137,9 @@ export default function Hero() {
           <span className="text-lg md:text-2xl font-light text-white/55 tracking-wider font-mono">
             {role}
           </span>
-          <span className="text-lg md:text-2xl text-indigo-400 font-thin cursor-blink">|</span>
+          <span className="text-lg md:text-2xl text-indigo-400 font-thin cursor-blink">
+            |
+          </span>
         </motion.div>
 
         {/* Stats row */}
@@ -145,8 +151,12 @@ export default function Hero() {
         >
           {STATS.map((stat, i) => (
             <div key={i} className="flex flex-col items-center gap-1">
-              <span className="text-2xl md:text-3xl font-bold text-gradient">{stat.value}</span>
-              <span className="text-[10px] uppercase tracking-[0.25em] text-white/35">{stat.label}</span>
+              <span className="text-2xl md:text-3xl font-bold text-gradient">
+                {stat.value}
+              </span>
+              <span className="text-[10px] uppercase tracking-[0.25em] text-white/35">
+                {stat.label}
+              </span>
             </div>
           ))}
         </motion.div>

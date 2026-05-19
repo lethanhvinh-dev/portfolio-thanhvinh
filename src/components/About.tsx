@@ -3,18 +3,18 @@ import { motion } from "motion/react";
 import SectionFrame from "./SectionFrame";
 
 const techStack = [
-  { name: "React", icon: "⚛️" },
-  { name: "TypeScript", icon: "🔷" },
-  { name: "Next.js", icon: "▲" },
-  { name: "Tailwind CSS", icon: "🎨" },
-  { name: "Framer Motion", icon: "✨" },
-  { name: "Node.js", icon: "🟢" },
-  { name: "Firebase", icon: "🔥" },
-  { name: "Supabase", icon: "⚡" },
-  { name: "Three.js", icon: "🌐" },
-  { name: "Vite", icon: "⚡" },
-  { name: "PostgreSQL", icon: "🐘" },
-  { name: "GraphQL", icon: "🔴" },
+  { name: "React" },
+  { name: "TypeScript" },
+  { name: "Next.js" },
+  { name: "Tailwind CSS" },
+  { name: "Framer Motion" },
+  { name: "Node.js" },
+  { name: "Firebase" },
+  { name: "Supabase" },
+  { name: "Three.js" },
+  { name: "Vite" },
+  { name: "PostgreSQL" },
+  { name: "GraphQL" },
 ];
 
 const skills = [
@@ -25,7 +25,16 @@ const skills = [
   { name: "Backend / Node.js", level: 65 },
 ];
 
-function SkillBar({ name, level, delay }: { key?: string | number; name: string; level: number; delay: number }) {
+function SkillBar({
+  name,
+  level,
+  delay,
+}: {
+  key?: string | number;
+  name: string;
+  level: number;
+  delay: number;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const [animated, setAnimated] = useState(false);
 
@@ -37,7 +46,7 @@ function SkillBar({ name, level, delay }: { key?: string | number; name: string;
         if (entry.isIntersecting) setAnimated(true);
         else setAnimated(false);
       },
-      { threshold: 0.4, rootMargin: "-40px" }
+      { threshold: 0.4, rootMargin: "-40px" },
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -101,8 +110,12 @@ export default function About() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             {/* Name label at bottom */}
             <div className="absolute bottom-0 left-0 right-0 p-6">
-              <p className="text-sm font-semibold text-white/90">Lê Thành Vinh</p>
-              <p className="text-xs text-white/50 mt-0.5">Frontend Developer · Ho Chi Minh City</p>
+              <p className="text-sm font-semibold text-white/90">
+                Lê Thành Vinh
+              </p>
+              <p className="text-xs text-white/50 mt-0.5">
+                Frontend Developer · Ho Chi Minh City
+              </p>
             </div>
             {/* Hover tint */}
             <div className="absolute inset-0 bg-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -114,16 +127,25 @@ export default function About() {
             transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut" }}
             className="absolute -top-4 -right-4 glass-strong rounded-2xl px-4 py-3 shadow-xl shadow-black/40"
           >
-            <div className="text-lg font-bold text-gradient">2+</div>
-            <div className="text-[9px] uppercase tracking-widest text-white/40 mt-0.5">Years Exp</div>
+            <div className="text-lg font-bold text-gradient">1</div>
+            <div className="text-[9px] uppercase tracking-widest text-white/40 mt-0.5">
+              Years Exp
+            </div>
           </motion.div>
           <motion.div
             animate={{ y: [0, 6, 0] }}
-            transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 1 }}
+            transition={{
+              repeat: Infinity,
+              duration: 4,
+              ease: "easeInOut",
+              delay: 1,
+            }}
             className="absolute -bottom-4 -left-4 glass-strong rounded-2xl px-4 py-3 shadow-xl shadow-black/40"
           >
-            <div className="text-lg font-bold text-gradient">5+</div>
-            <div className="text-[9px] uppercase tracking-widest text-white/40 mt-0.5">Projects</div>
+            <div className="text-lg font-bold text-gradient">2</div>
+            <div className="text-[9px] uppercase tracking-widest text-white/40 mt-0.5">
+              Projects
+            </div>
           </motion.div>
         </motion.div>
 
@@ -139,15 +161,17 @@ export default function About() {
               About Me
             </p>
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold mb-6 leading-tight">
-              Crafting experiences at the{" "}
-              <span className="text-gradient">intersection of design</span>{" "}
-              and technology.
+              Crafting modern web experiences at the{" "}
+              <span className="text-gradient">intersection of design</span> and
+              technology.
             </h2>
             <p className="text-white/55 leading-relaxed text-base md:text-lg max-w-xl">
-              I specialize in building minimalist, performant, and highly
-              interactive digital products. My approach focuses on clean
-              aesthetics combined with technical precision to deliver
-              2026-standard software experiences.
+              Front-end Developer with hands-on experience in building
+              responsive and user-friendly web applications using React,
+              Next.js, TypeScript, and Tailwind CSS.
+              <br />
+              Passionate about clean UI, performance optimization, and
+              continuously learning modern web technologies.
             </p>
           </motion.div>
 
@@ -187,7 +211,7 @@ export default function About() {
                   whileHover={{ scale: 1.08, y: -2 }}
                   className="flex items-center gap-1.5 rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2 text-sm font-medium text-white/75 transition-colors duration-300 hover:border-indigo-500/50 hover:bg-indigo-500/10 hover:text-white cursor-default"
                 >
-                  <span>{tech.icon}</span>
+                  {/* <span>{tech.icon}</span> */}
                   {tech.name}
                 </motion.span>
               ))}
