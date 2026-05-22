@@ -38,7 +38,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
           {/* Brand */}
           <div className="flex flex-col gap-3">
-            <span className="text-xl font-black tracking-tighter text-gradient">TV.</span>
+            <span className="text-xl font-black tracking-tighter text-gradient">
+              TV.
+            </span>
             <p className="text-xs text-white/35 leading-relaxed max-w-[220px]">
               Building modern, beautiful, and performant web experiences.
             </p>
