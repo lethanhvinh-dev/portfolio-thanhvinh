@@ -11,7 +11,7 @@ const ROLES = [
 const STATS = [
   { value: "2+", label: "Projects Built" },
   { value: "1", label: "Years Experience" },
-  { value: "10+", label: "Tech Mastered" },
+  { value: "6+", label: "Tech Mastered" },
 ];
 
 function useTypingEffect(words: string[], speed = 80, pause = 1800) {

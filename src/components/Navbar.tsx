@@ -86,15 +86,15 @@ export default function Navbar() {
 
         {/* CTA: Download CV */}
         <motion.a
-          href="/LeThanhVinh-CV.pdf"
-          download="LeThanhVinh-CV.pdf"
+          href="/LeThanhVinh-CV-2026.pdf"
+          download="LeThanhVinh-CV-2026.pdf"
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-widest bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:shadow-lg hover:shadow-indigo-500/25 hover:scale-105 transition-all duration-300 active:scale-95"
         >
           <Download size={13} />
-          Resume
+          Download CV
         </motion.a>
 
         {/* Mobile Toggle */}
