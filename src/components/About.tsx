@@ -3,15 +3,13 @@ import { motion } from "motion/react";
 import SectionFrame from "./SectionFrame";
 
 const techStack = [
-  { name: "React" },
+  { name: "React.js" },
   { name: "TypeScript" },
   { name: "Next.js" },
   { name: "Tailwind CSS" },
   { name: "Framer Motion" },
   { name: "Node.js" },
   { name: "Firebase" },
-  { name: "Supabase" },
-  { name: "Three.js" },
   { name: "Vite" },
   { name: "PostgreSQL" },
   { name: "GraphQL" },
@@ -142,7 +140,7 @@ export default function About() {
             }}
             className="absolute -bottom-4 -left-4 glass-strong rounded-2xl px-4 py-3 shadow-xl shadow-black/40"
           >
-            <div className="text-lg font-bold text-gradient">2</div>
+            <div className="text-lg font-bold text-gradient">2+</div>
             <div className="text-[9px] uppercase tracking-widest text-white/40 mt-0.5">
               Projects
             </div>
