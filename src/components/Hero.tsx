@@ -107,7 +107,7 @@ export default function Hero() {
           <div className="absolute inset-[2px] rounded-full bg-bg-dark" />
           <div className="relative w-full h-full rounded-full overflow-hidden">
             <img
-              src="/Thanh-vinh.jpg"
+              src="/thanhzinh.jpg"
               alt="Lê Thành Vinh"
               className="w-full h-full object-cover rounded-full transition-all duration-700 hover:scale-110"
               referrerPolicy="no-referrer"
