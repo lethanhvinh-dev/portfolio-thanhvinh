@@ -86,8 +86,8 @@ export default function Navbar() {
 
         {/* CTA: Download CV */}
         <motion.a
-          href="/lethanhvinh-cv-2026.pdf"
-          download="LeThanhVinh-CV-2026.pdf"
+          href="/ThanhVinh_Frontend.pdf"
+          download="ThanhVinh_Frontend.pdf"
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
