@@ -13,6 +13,15 @@ const techStack = [
   { name: "Vite" },
   { name: "PostgreSQL" },
   { name: "GraphQL" },
+  { name: "PC/Laptop Hardware" },
+  { name: "Windows" },
+  { name: "macOS" },
+  { name: "OS" },
+  { name: "Active Directory" },
+  { name: "Network (CCNA)" },
+  { name: "Ticket System" },
+  { name: "Postman" },
+  { name: "Git" },
 ];
 
 const skills = [
@@ -21,6 +30,8 @@ const skills = [
   { name: "React & TypeScript", level: 88 },
   { name: "Mobile (Flutter)", level: 70 },
   { name: "Backend / Node.js", level: 65 },
+  { name: "IT Support & Systems", level: 85 },
+  { name: "Hardware & Troubleshooting", level: 80 },
 ];
 
 function SkillBar({
